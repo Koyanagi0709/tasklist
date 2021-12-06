@@ -101,7 +101,7 @@ class TasksController extends Controller
         //タスクを保有しているユーザーかチェック
         if ($task->user_id == \Auth::id()){
             // メッセージ詳細ビューでそれを表示
-            return view('tasks.show', [
+            return view('tasks.edit', [
                 'task' => $task,
             ]);
         }else{
