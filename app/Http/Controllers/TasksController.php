@@ -78,6 +78,9 @@ class TasksController extends Controller
      */
     public function show($id)
     {
+        
+        // idの値でメッセージを検索して取得
+        $task = Task::findOrFail($id);
         //タスクを保有しているユーザーかチェック
         if ($task->user_id == \Auth::id()){
             // メッセージ詳細ビューでそれを表示
